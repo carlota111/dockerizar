@@ -29,6 +29,9 @@ def obtener_datos():
 
         
 # Bucle infinito para hacer la solicitud cada X minutos
-while True:
-    obtener_datos()
-    time.sleep(intervalo_minutos * 60)  # Convertir minutos a segundos
+try:
+    while True:
+        obtener_datos()
+        time.sleep(intervalo_minutos * 60)  # Convertir minutos a segundos
+except KeyboardInterrupt:
+    print("\nLa ejecución ha finalizado.")
