@@ -1,15 +1,22 @@
 import requests
+import os
 import time
 from pymongo import MongoClient
+
+# Configuración desde variables de entorno
+mongo_uri = os.getenv('MONGO_URI', 'mongodb://localhost:27017/')
+db_name = os.getenv('DB_NAME', 'bicis_db')
+collection_name = os.getenv('COLLECTION_NAME', 'bicicorunha')
 
 # URL de la API
 url = "http://api.citybik.es/v2/networks/bicicorunha"
 intervalo_minutos = 2  
 
 # Conexión a MongoDB
-client = MongoClient('mongodb://localhost:27017/')  
-db = client['bicis_db']  
-collection = db['bicicorunha']  
+# Conexión a MongoDB
+client = MongoClient(mongo_uri)
+db = client[db_name]
+collection = db[collection_name]
 
 # Función para hacer la solicitud a la API
 def obtener_datos():
@@ -19,7 +26,7 @@ def obtener_datos():
             data = response.json()
             # Almacenar datos en MongoDB
             collection.insert_one(data)
-            print("Datos almacenados correctamente.")
+            print("Datos almacenandose correctamente.")
         else:
             error_message = f"Error {response.status_code}: {response.text}"
             print(error_message)
