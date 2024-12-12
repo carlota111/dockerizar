@@ -13,10 +13,13 @@ url = "http://api.citybik.es/v2/networks/bicicorunha"
 intervalo_minutos = 2  
 
 # Conexión a MongoDB
-# Conexión a MongoDB
-client = MongoClient(mongo_uri)
-db = client[db_name]
-collection = db[collection_name]
+try:
+    client = MongoClient(mongo_uri)
+    db = client[db_name]
+    collection = db[collection_name]
+except Exception as e:
+    print(f"Error al conectar a MongoDB: {e}")
+    exit(1)
 
 # Función para hacer la solicitud a la API
 def obtener_datos():
@@ -24,15 +27,17 @@ def obtener_datos():
         response = requests.get(url)
         if response.status_code == 200:
             data = response.json()
-            # Almacenar datos en MongoDB
-            collection.insert_one(data)
-            print("Datos almacenandose correctamente.")
+            stations = data["network"]["stations"]
+            
+            # Insertar todas las estaciones a la vez
+            collection.insert_many(stations)
+            print(f"{len(stations)} estaciones almacenadas correctamente.")
         else:
             error_message = f"Error {response.status_code}: {response.text}"
             print(error_message)
             raise Exception(error_message)  # Lanzar una excepción para detener el bucle
     except Exception as e:
-        print(f"Error al conectar a la API o almacenar datos en MongoDB")
+        print(f"Error al conectar a la API o almacenar datos en MongoDB: {e}")
         raise  # Volver a lanzar la excepción para manejarla en el nivel superior
 
 # Bucle principal para ejecutar la solicitud periódicamente
@@ -43,7 +48,7 @@ try:
 except KeyboardInterrupt:
     print("\nEjecución interrumpida por el usuario. Finalizando el programa...")
 except Exception as e:
-    print(f"Ejecución detenida debido a un error")
+    print(f"Ejecución detenida debido a un error{e}")
 finally:
     client.close()
     print("Conexión a MongoDB cerrada.")
