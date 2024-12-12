@@ -62,3 +62,6 @@ Sube la imagen etiquetada a Docker Hub con el siguiente comando:
 ```bash
 docker push carlotagp/dockerizar:latest
 ````
+
+## 4.	Configura e executa a aplicación on cloud en OpenStack usando Docker (Mongo + Applicación), que quedará executándose durante as vacacións.  Calcula o número de documentos que almacenarás unha vez finalizadas as vacacións.
+Debes crear una instancia en https://cloud.srv.cesga.es/project/instances/ pasádole este fichero en el apartado de "Configuración"
