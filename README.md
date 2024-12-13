@@ -71,11 +71,6 @@ Entrar a la instancia:
  ssh -J xuedua067@hadoop.cesga.es cesgaxuser@10.133.27.238
 ````
 
-Instalar docker en la instancia:
-```bash
- ssh -J xuedua067@hadoop.cesga.es cesgaxuser@10.133.27.238
-````
-
 Instalar los servicios definidos en el docker-compose
 ```bash
  docker compose up -d
