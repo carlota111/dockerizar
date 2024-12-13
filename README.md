@@ -64,7 +64,7 @@ docker push carlotagp/dockerizar:latest
 ````
 
 ## 4.	Configura e executa a aplicación on cloud en OpenStack usando Docker (Mongo + Applicación), que quedará executándose durante as vacacións.  Calcula o número de documentos que almacenarás unha vez finalizadas as vacacións.
-Debes crear una instancia en https://cloud.srv.cesga.es/project/instances/ pasádole este fichero en el apartado de "Configuración" [Descargar script_docker_ubuntu2204.sh](https://raw.githubusercontent.com/carlotagp/mi-repositorio/main/script_docker_ubuntu2204.sh)
+Debes crear una instancia en https://cloud.srv.cesga.es/project/instances/ pasádole este fichero en el apartado de "Configuración" [Descargar script_docker_ubuntu2204.sh](https://github.com/carlota111/eva_1_SBD/raw/refs/heads/main/Downloads/script_docker_ubuntu2204.sh))
 
 Entrar a la instancia:
 ```bash
