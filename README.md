@@ -68,7 +68,7 @@ Debes crear una instancia en https://cloud.srv.cesga.es/project/instances/ pasá
 
 Entrar a la instancia:
 ```bash
- ssh -J xuedua067@hadoop.cesga.es cesgaxuser@10.133.27.238
+ ssh -J xueduaXXX@hadoop.cesga.es cesgaxuser@XXX.XXX.XXX.XXX
 ````
 
 Instalar los servicios definidos en el docker-compose
