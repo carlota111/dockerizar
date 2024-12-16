@@ -70,7 +70,10 @@ Entrar a la instancia:
 ```bash
  ssh -J xueduaXXX@hadoop.cesga.es cesgaxuser@XXX.XXX.XXX.XXX
 ````
-
+Copiar el docker-compose dentro de:
+```bash
+ nano docker-compose.yml
+````
 Instalar los servicios definidos en el docker-compose
 ```bash
  docker compose up -d
