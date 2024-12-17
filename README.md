@@ -1,6 +1,13 @@
 # Desenvolvemento e integración de scripts en Python
 O obxectivo deste exercicio é desenvolver dous scripts en Python que interactúen cunha API, unha base de datos MongoDB e diversas ferramentas para o manexo de datos. Ademais, inclúense opcións avanzadas para mellorar a funcionalidade e integración da solución.
 
+## Clonar repositorio 
+```bash
+git clone git@github.com:carlota111/dockerizar.git
+````
+```bash
+cd dockerizar
+````
 ## Instalar las librerías
 ```bash
 conda env create -f envSBD.yml
