@@ -8,17 +8,17 @@ conda env create -f envSBD.yml
 ```bash
 conda activate exSBD
 ````
+
+## Comando para crear mongoDB y el docker con la imagen del script
+```bash
+docker compose up -d
+````
 ## MongoDB
 
 ### Creación de MongoDB
 ```bash
 docker run --name mongoDB -d -p 27017:27017 mongo
 ````
-#### O crear mongoDB y el docker con la imagen del script
-```bash
-docker compose up -d
-````
-
 ### Ejecutar MongoDB
 ```bash
 docker exec -it mongoDB mongosh
