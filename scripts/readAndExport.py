@@ -42,8 +42,8 @@ try:
     df = pd.DataFrame(stations_data)
 
     # Exportar el DataFrame a un archivo CSV y Parquet
-    df.to_csv('bicicorunha_stations.csv', index=False)
-    df.to_parquet('bicicorunha_stations.parquet', index=False)
+    df.to_csv('../datasets/bicicorunha_stations.csv', index=False)
+    df.to_parquet('../datasets/bicicorunha_stations.parquet', index=False)
 
     print("Datos exportados correctamente.")
 
