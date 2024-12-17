@@ -1,7 +1,12 @@
 # Desenvolvemento e integración de scripts en Python
 O obxectivo deste exercicio é desenvolver dous scripts en Python que interactúen cunha API, unha base de datos MongoDB e diversas ferramentas para o manexo de datos. Ademais, inclúense opcións avanzadas para mellorar a funcionalidade e integración da solución.
 ## Instalar las libreías
-
+```bash
+conda env create -f environment.yml
+````
+```bash
+conda activate exSBD
+````
 ## MongoDB
 
 ### Creación de MongoDB
