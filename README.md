@@ -85,3 +85,44 @@ Instalar los servicios definidos en el docker-compose
 ```bash
  docker compose up -d
 ````
+
+## 5.	Automatizar a actualización do contedor Docker a partir de cambios realizados no repositorio GitHub.
+DockerHub: Mi perfil > Account Settings > Personal Access Token > Generate New Token
+
+Repositorio de GitHub: Settings > Secret And Variables >  Actions > Repository secrets
+
+# DOCKERHUB_TOKEN
+```bash
+name: ci
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v4
+      -
+        name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      -
+        name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
+````
+# DOCKER_USERNAME 
+Copiar el punto 2 que nos dieron al crear el token en docker hub
