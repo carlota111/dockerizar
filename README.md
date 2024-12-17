@@ -14,7 +14,6 @@ conda activate exSBD
 docker compose up -d
 ````
 ## MongoDB
-
 ### Creación de MongoDB
 ```bash
 docker run --name mongoDB -d -p 27017:27017 mongo
