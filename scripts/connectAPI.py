@@ -12,7 +12,7 @@ collection_name = os.getenv('COLLECTION_NAME', 'bicicorunha')
 url = "http://api.citybik.es/v2/networks/bicicorunha"
 intervalo_minutos = 2  
 
-# Conexión a MongoDB
+# Conexión a Mongodb
 try:
     client = MongoClient(mongo_uri)
     db = client[db_name]
