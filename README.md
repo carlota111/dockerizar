@@ -14,6 +14,10 @@ conda activate exSBD
 ```bash
 docker run --name mongoDB -d -p 27017:27017 mongo
 ````
+#### O crear mongoDB y el docker con la imagen del script
+```bash
+docker compose up -d
+````
 
 ### Ejecutar MongoDB
 ```bash
@@ -73,7 +77,7 @@ docker push carlotagp/dockerizar:latest
 ## 4.	Configura e executa a aplicación on cloud en OpenStack usando Docker (Mongo + Applicación), que quedará executándose durante as vacacións.  Calcula o número de documentos que almacenarás unha vez finalizadas as vacacións.
 Debes crear una instancia en https://cloud.srv.cesga.es/project/instances/ pasádole este fichero en el apartado de "Configuración" [Descargar script_docker_ubuntu2204.sh](https://github.com/carlota111/eva_1_SBD/raw/refs/heads/main/Downloads/script_docker_ubuntu2204.sh))
 
-Entrar a la instancia:
+Entrar a la instancia cambiar las X por numero de usuario y la IP de la instancia:
 ```bash
  ssh -J xueduaXXX@hadoop.cesga.es cesgaxuser@XXX.XXX.XXX.XXX
 ````
