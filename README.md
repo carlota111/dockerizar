@@ -15,7 +15,7 @@ dockerizar/
 ├── extra/                    
 │   └── connectAPI.py             
 ├── scripts/                  
-│   ├── connectAPI.py
+│   ├── connectAPI.py #script imagen 
 |   ├── connectAPI1.py              
 │   └── readAndExport.py            
 ├── Dockerfile                
